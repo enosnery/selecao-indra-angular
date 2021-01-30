@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Menu"
+          [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu class="menu" #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <span class="fill-blank"></span>
+  <h1>PRICE TABLE</h1>
+  <span class="fill-blank"></span>
+</mat-toolbar>
