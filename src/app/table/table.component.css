@@ -1,0 +1,27 @@
+mat-card{
+  width: 40vw;
+  cursor: pointer;
+}
+
+.container{
+  margin: 30px;
+}
+
+.user-container{
+  display: flex;
+  justify-content: normal;
+  margin: 30px;
+  width: 30%;
+  background-color: lightblue;
+  color: black;
+  font-size: large;
+}
+.user-container-off{
+  display: flex;
+  justify-content: normal;
+  margin: 30px;
+  width: 30%;
+  background-color: whitesmoke;
+  color: black;
+  font-size: large;
+}

@@ -1,7 +1,7 @@
-import { UserResponse } from './user-response';
+import { UserListResponse } from './user-list-response';
 
 describe('UserResponse', () => {
   it('should create an instance', () => {
-    expect(new UserResponse()).toBeTruthy();
+    expect(new UserListResponse()).toBeTruthy();
   });
 });

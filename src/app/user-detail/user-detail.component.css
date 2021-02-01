@@ -1,0 +1,14 @@
+.container{
+  margin: 50px;
+}
+
+.card{
+  width: 250px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+

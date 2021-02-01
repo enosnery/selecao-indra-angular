@@ -14,10 +14,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ImportComponent } from './import/import.component';
+import { TableComponent } from './table/table.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
-  { path: 'userdetail', component: UserDetailComponent },
+  { path: 'user-detail/:id', component: UserDetailComponent },
+  { path: 'import', component: ImportComponent },
+  { path: 'table', component: TableComponent },
   { path: '', redirectTo: '/user', pathMatch: 'full' }];
 
 @NgModule({
@@ -25,7 +32,9 @@ const routes: Routes = [
     AppComponent,
     CustomHeaderComponent,
     UserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ImportComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,10 @@ const routes: Routes = [
     MatIconModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

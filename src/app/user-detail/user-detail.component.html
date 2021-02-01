@@ -1,1 +1,32 @@
-<p>user-detail works!</p>
+<div class="container">
+
+  <mat-card class="card">
+    <mat-icon class="pointer" (click)="voltar()">keyboard_backspace</mat-icon>
+    <span>&nbsp;DETALHES DO USUÁRIO</span>
+    </mat-card>
+  <div *ngIf="id != 0">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="user.name">
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <mat-label>Usuário</mat-label>
+      <input matInput [(ngModel)]="user.login">
+    </mat-form-field>
+  </div>
+  <div *ngIf="id == 0">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="newName">
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <mat-label>Usuário</mat-label>
+      <input matInput [(ngModel)]="newLogin">
+    </mat-form-field>
+  </div>
+  <br/>
+  <button *ngIf="id != 0" mat-stroked-button (click)="updateUser()">Atualizar</button>
+  <button *ngIf="id == 0" mat-stroked-button (click)="addUser()">Adicionar</button>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../classes/user';
-import {UserResponse} from '../classes/user-response';
+import {UserListResponse} from '../classes/user-list-response';
 import {Router} from '@angular/router';
 
 @Component({
@@ -16,13 +16,27 @@ export class UserComponent implements OnInit {
   constructor(private router: Router, private httpclient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpclient.get<UserResponse>('http://localhost:8080/user').subscribe(data =>
-      this.userList = data.response
-
-    );
+   this.loadUsers();
   }
 
   goToUser(id: number): void  {
-    this.router.navigateByUrl('user-detail')
+    this.router.navigate(['/user-detail', id]);
+  }
+
+  deleteUser(id: number): void {
+    this.httpclient.delete('http://localhost:8080/user/' + id).subscribe(data => {
+      console.log(data);
+      this.loadUsers();
+    });
+  }
+
+  loadUsers(): void{
+    this.httpclient.get<UserListResponse>('http://localhost:8080/user').subscribe(data =>
+      this.userList = data.response
+    );
+  }
+
+  addUser(): void{
+    this.router.navigate(['/user-detail', 0]);
   }
 }

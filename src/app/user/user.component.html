@@ -1,6 +1,10 @@
-<mat-card class="container-title">LISTA DE USUÁRIOS</mat-card>
-<mat-card class="user-container" *ngFor="let user of userList">
-  <span (click)="goToUser(user.id)">{{user.id}} - {{user.name}}</span>
+<mat-card class="container-title">
+  <span class="pointer">LISTA DE USUÁRIOS</span>
   <span class="fill-blank"></span>
-  <mat-icon class="icon-style">delete</mat-icon>
+  <mat-icon class="icon-style pointer" (click)="addUser()">add_task</mat-icon>
+</mat-card>
+<mat-card class="user-container" *ngFor="let user of userList">
+  <span class="pointer" (click)="goToUser(user.id)">{{user.id}} - {{user.name}}</span>
+  <span class="fill-blank"></span>
+  <mat-icon class="icon-style pointer" (click)="deleteUser(user.id)">delete</mat-icon>
 </mat-card>
