@@ -8,19 +8,21 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ImportComponent implements OnInit {
 
-  fileToUpload: File;
+  arquivoImportacao: File;
+
+  fileChange(files: any): void{
+    this.arquivoImportacao = files[0];
+  }
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  import(event: Event): void {
-    this.fileToUpload = ( event.target as HTMLInputElement).files[0];
+  import(): void {
     const formData = new FormData();
-    formData.append('file', this.fileToUpload, this.fileToUpload.name);
+    formData.append('file', this.arquivoImportacao, this.arquivoImportacao.name);
     this.http.post('http://localhost:8080/import', formData).subscribe((val) => {
-
       console.log(val);
     });
   }

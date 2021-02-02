@@ -1,1 +1,10 @@
-<input type="file" (change)="import($event)" placeholder="Upload file">
+<div class="container">
+  <form #formulario="ngForm" (ngSubmit)="import()">
+    <h3>Escolha o arquivo .csv para ser importado</h3>
+    <input type="file" (change)="fileChange(fileupload.files)"  #fileupload [(ngModel)]="arquivoImportacao"
+           name="myFile" placeholder="Upload file" accept=".csv">
+    <br/>
+    <br/>
+    <button mat-raised-button color="primary" type="submit">Importar...</button>
+  </form>
+</div>

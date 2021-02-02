@@ -1,0 +1,32 @@
+mat-card{
+  width: 50vw;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.container-title{
+  display: flex;
+  justify-content: normal;
+  margin: 20px;
+  font-size: x-large;
+}
+
+.user-container{
+  display: flex;
+  justify-content: normal;
+  margin: 30px;
+  width: 30%;
+  background-color: dodgerblue;
+  color: white;
+  font-size: large;
+}
+
+.icon-style{
+  float: end;
+}
+
+.fill-blank{
+  flex: 1 1 auto;
+}
